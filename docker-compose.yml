@@ -1,0 +1,29 @@
+services:
+  app-tareas-front:
+    container_name: app-tareas-front
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+            - .react-router/
+            - build/
+            - README.md
+    networks:
+      - tareas-network
+
+networks:
+  tareas-network:
+    external: true
