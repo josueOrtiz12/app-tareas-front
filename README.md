@@ -58,3 +58,17 @@ docker network ls
 docker network create tareas-network 2>/dev/null || true && docker-compose up -d
 ```
 
+
+## 🔄 testeo de front
+
+Frontend — app/services/taskServices.test.ts
+Testea el servicio de tareas mockeando apiConfig.fetch con vi.spyOn:
+
+getAll — verifica que llame a GET /tasks con los query params correctos.
+create — verifica POST /tasks con el body, y que lance error si la respuesta falla.
+update — verifica PUT /tasks/:id con el body.
+delete — verifica DELETE /tasks/:id y que lance error si falla.
+
+```bash
+docker exec -w /app app-tareas-backend npm test
+```
