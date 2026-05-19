@@ -13,7 +13,7 @@ export default [
         index("routes/tasks.tsx"),
     ]),
 
-    // route("logout", "routes/logout.tsx"),
+    route("logout", "routes/logout.tsx"),
 
     route("*", "routes/not-found.tsx"),
 ] as RouteConfig;
