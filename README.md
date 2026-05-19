@@ -1,4 +1,4 @@
-# 🚀 app-tareas-front - Front (React-router + Docker)
+# 📝 app-tareas-front - Front (React-router + Docker)
 
 
 <p align="center">
