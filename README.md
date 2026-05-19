@@ -72,3 +72,13 @@ delete — verifica DELETE /tasks/:id y que lance error si falla.
 ```bash
 docker exec -w /app app-tareas-backend npm test
 ```
+
+
+
+## Uso de IA
+Se utilizo Deepseek y Gemini como herramienta de ayuda para la conexion del back al front y para generar una buena prueba unitaria que permita el
+buen funcionamiento de los endpoint de las tareas, tambien se utilizo la ia como guia para, se utilizo tambien como ayuda para el buen funcionamiento del contenedor de docker
+
+
+## decisiones técnicas
+Se utilizo React.route ya que estaba usando este mismo framawork para hacer pruebas con una api de proyecto propio en esta version del framework asi que reutilice la estructura inicial que tenia de ese proyecto y lo adapte a las necesidades de la api de tareas
