@@ -7,13 +7,13 @@ export default [
 
     route("login", "routes/login.tsx"),
 
+    route("register", "routes/register.tsx"),
+
     route("logout", "routes/logout.ts"),
 
     route("dashboard", "layouts/DashboardLayout.tsx", [
         index("routes/tasks.tsx"),
     ]),
-
-    route("logout", "routes/logout.tsx"),
 
     route("*", "routes/not-found.tsx"),
 ] as RouteConfig;

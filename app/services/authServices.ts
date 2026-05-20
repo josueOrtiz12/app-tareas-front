@@ -1,4 +1,4 @@
-import type { LoginCredentials, AuthResponse } from "~/types/auth";
+import type { LoginCredentials, RegisterCredentials, AuthResponse } from "~/types/auth";
 import { apiConfig } from "../../deploy/api.config";
 
 export async function authServices(credentials: LoginCredentials): Promise<{ data: AuthResponse, headers: Headers }> {
@@ -20,6 +20,20 @@ export async function authServices(credentials: LoginCredentials): Promise<{ dat
         data,
         headers: response.headers 
     };
+}
+
+export async function registerServices(data: RegisterCredentials) {
+    const response = await apiConfig.fetch('/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || "Error al registrarse");
+    }
+
+    return await response.json();
 }
 
 export async function logoutService() {
